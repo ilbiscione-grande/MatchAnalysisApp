@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/tv_half_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/halves_not_started"
+        android:textAlignment="center"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="@+id/c_meter"
+        app:layout_constraintStart_toStartOf="@+id/c_meter"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_scoreHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toStartOf="@+id/c_meter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_1" />
+
+    <TextView
+        android:id="@+id/tv_scoreAway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c_meter"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_1" />
+
+    <TextView
+        android:id="@+id/tv_half_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:fontFamily="@font/roboto"
+        android:text="H A L V L E K"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="@+id/c_meter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/c_meter"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_1" />
+
+    <TextView
+        android:id="@+id/tv_homeTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans"
+        android:text="HVETLANDA GIF"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_scoreHome"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/tv_scoreHome"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scoreHome" />
+
+    <TextView
+        android:id="@+id/tv_cutom_button_1"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingLeft="0dp"
+        android:text="AVSLUT"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_playPause"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam" />
+
+    <TextView
+        android:id="@+id/tv_cutom_button_3"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:paddingLeft="0dp"
+        android:text="DJUPLEDSBOLLAR"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_playPause"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_1" />
+
+
+    <TextView
+        android:id="@+id/tv_cutom_button_"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:paddingLeft="0dp"
+        android:text="LÄGG TILL"
+        android:textAlignment="center"
+        android:textColor="#989797"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_playPause"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_3" />
+
+    <TextView
+        android:id="@+id/tv_cutom_button_5"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:paddingLeft="0dp"
+        android:text="LÄGG TILL"
+        android:textAlignment="center"
+        android:textColor="#989797"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_playPause"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_" />
+
+    <TextView
+        android:id="@+id/tv_cutom_button_6"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:paddingLeft="0dp"
+        android:text="LÄGG TILL"
+        android:textAlignment="center"
+        android:textColor="#989797"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_playPause"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_5" />
+
+    <TextView
+        android:id="@+id/tv_cutom_button_7"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:paddingLeft="0dp"
+        android:text="LÄGG TILL"
+        android:textAlignment="center"
+        android:textColor="#989797"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_playPause"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_6" />
+
+    <TextView
+        android:id="@+id/tv_cutom_button_2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="-10dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:paddingLeft="0dp"
+        android:text="ÅTERERÖVRING"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_stop"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam" />
+
+    <TextView
+        android:id="@+id/tv_cutom_button_4"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="-10dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:paddingLeft="0dp"
+        android:text="KONTRING"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_stop"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_2" />
+
+    <TextView
+        android:id="@+id/tv_cutom_button_8"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="-10dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:paddingLeft="0dp"
+        android:text="LÄGG TILL"
+        android:textAlignment="center"
+        android:textColor="#989797"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_stop"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_4" />
+
+    <TextView
+        android:id="@+id/tv_cutom_button_9"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="-10dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:paddingLeft="0dp"
+        android:text="LÄGG TILL"
+        android:textAlignment="center"
+        android:textColor="#989797"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_stop"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_8" />
+
+    <TextView
+        android:id="@+id/tv_cutom_button_10"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="-10dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:paddingLeft="0dp"
+        android:text="LÄGG TILL"
+        android:textAlignment="center"
+        android:textColor="#989797"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_stop"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_9" />
+
+    <TextView
+        android:id="@+id/tv_cutom_button_11"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="-10dp"
+        android:background="@drawable/button_left_side"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:paddingLeft="0dp"
+        android:text="LÄGG TILL"
+        android:textAlignment="center"
+        android:textColor="#989797"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_stop"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_10" />
+
+    <TextView
+        android:id="@+id/tv_awayTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans"
+        android:text="JÖNKÖPING SÖDRA"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_scoreAway"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/tv_scoreAway"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scoreHome" />
+
+
+    <Chronometer
+        android:id="@+id/c_meter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_half_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_text" />
+
+
+    <ImageView
+        android:id="@+id/btn_playPause"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="@+id/c_meter"
+        app:layout_constraintTop_toBottomOf="@+id/c_meter"
+        app:srcCompat="@drawable/playandpause" />
+
+    <ImageView
+        android:id="@+id/btn_stop"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/c_meter"
+        app:layout_constraintTop_toBottomOf="@+id/c_meter"
+        app:srcCompat="@drawable/stop" />
+
+    <TextView
+        android:id="@+id/tv_half_3"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/button_left_side"
+        android:textAlignment="center"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_homeTeam2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/nunito_sans"
+        android:text="LIVE TICKER"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_half_3"
+        app:layout_constraintStart_toStartOf="@+id/tv_half_3"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_3" />
+
+    <TextView
+        android:id="@+id/tv_liveTickerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/nunito_sans"
+        android:textColor="#000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_liveTickerTime"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam2"
+        tools:text="Händelse" />
+
+    <TextView
+        android:id="@+id/tv_liveTickerTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/nunito_sans"
+        android:textColor="#000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_half_3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam2"
+        tools:text="14:15" />
+
+    <TextView
+        android:id="@+id/tv_liveTickerTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/nunito_sans"
+        android:textColor="#000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_half_3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam2"
+        tools:text="Lagnamn" />
+
+    <TextView
+        android:id="@+id/tv_half_"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#616161"
+        android:textAlignment="center"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_half_"
+        app:layout_constraintStart_toStartOf="@+id/tv_half_"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_"
+        app:srcCompat="@drawable/ic_baseline_home_24" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/tv_half_"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_"
+        app:srcCompat="@drawable/ic_sharp_sports_soccer_24" />
+
+    <ImageView
+        android:id="@+id/iv_btnStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_"
+        app:srcCompat="@drawable/ic_baseline_bar_chart_24" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="#E48BC34A"
+        android:padding="10dp"
+        android:text="HEJ  OM DU VILL HA FLER KNAPPAR OCH ÄNNU BÄTTRE FUNKTIONALITET OCH DESSUTOM BLI AV  MED DETTA MEDDELANDET SÅ  KAN DU VÄLJA ATT BETALA FÖR APPEN.\nFÖR BARA 10 KRONOR I MÅNADEN FÅR DU TOTALT 8 KNAPPAR SOM DU KAN KONFIGURERA PRECIS SOM DU VILL.\nLÄS MER OM VÅRA ABONNEMANG OCH VAD SOM INGÅR PÅ HEMSIDAN."
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tv_half_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_3" />
+</androidx.constraintlayout.widget.ConstraintLayout>
