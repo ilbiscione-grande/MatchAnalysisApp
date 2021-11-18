@@ -10,9 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MatchAnalysisApp">
-        <activity android:name="com.ilbiscione.MatchAnalysisApp.StatsActivity"></activity>
+        <activity android:name=".StatsActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            />
         <activity
-            android:name="com.ilbiscione.MatchAnalysisApp.MainActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>

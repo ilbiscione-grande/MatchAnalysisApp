@@ -5,12 +5,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.SystemClock
+import android.provider.Settings
 import android.widget.Chronometer
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.room.Room
+import com.example.matchanalysisapp.MatchEventsDatabase
+import com.example.matchanalysisapp.data.MatchEvents
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var db: MatchEventsDatabase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -211,6 +221,15 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+        db = Room.databaseBuilder(
+            applicationContext,
+            MatchEventsDatabase::class.java,
+            "MatchEvents-DB"
+        ).build()
+
+
+
         // BUTTON 1
         btnCustomButton1.setOnClickListener {
             btnCustomButton1.setBackgroundResource(R.drawable.button_left_side_pushed)
@@ -222,12 +241,23 @@ class MainActivity : AppCompatActivity() {
             if (matchStatus != "notStarted" && matchStatus != "paused" && matchStatus != "stopped" && matchStatus != "finished") {
 
                 var currentChrono = c_meter.text.toString()
-                var chronoMinutesDb = c_meter.text.toString().substringBefore(":").toInt()
-                var chronoSecondsDb = c_meter.text.toString().substringAfter(":").toInt()
+                var chronoMinutesDb : String = c_meter.text.toString().substringBefore(":")
+                var chronoSecondsDb : String = c_meter.text.toString().substringAfter(":")
 
                 tv_liveTickerTime.text = "$currentChrono\n${tv_liveTickerTime.text}"
                 tv_liveTickerText.text = "${btnCustomButton1.text}\n${tv_liveTickerText.text}"
                 tv_liveTickerTeam.text = "$tv_myTeam\n${tv_liveTickerTeam.text}"
+
+
+
+                val newEvent = MatchEvents(1, null, "$chronoMinutesDb:$chronoSecondsDb", btnCustomButton1.text.toString(), "Hvetlanda Gif")
+
+                Toast.makeText(this, "$newEvent", Toast.LENGTH_SHORT).show()
+
+                GlobalScope.launch {
+                    delay(50)
+                    db.matchEventsDao().insertMatchEvent(newEvent)
+                }
 
 
             } else {
@@ -253,6 +283,17 @@ class MainActivity : AppCompatActivity() {
                 tv_liveTickerTime.text = "$currentChrono\n${tv_liveTickerTime.text}"
                 tv_liveTickerText.text = "${btnCustomButton2.text}\n${tv_liveTickerText.text}"
                 tv_liveTickerTeam.text = "$tv_myTeam\n${tv_liveTickerTeam.text}"
+
+                val newEvent = MatchEvents(1, null, "$chronoMinutesDb:$chronoSecondsDb", btnCustomButton2.text.toString(), "Hvetlanda Gif")
+
+                Toast.makeText(this, "$newEvent", Toast.LENGTH_SHORT).show()
+
+                GlobalScope.launch {
+                    delay(50)
+                    db.matchEventsDao().insertMatchEvent(newEvent)
+                }
+
+
 
             } else {
                 Toast.makeText(this, "Matchen måste startas innan du kan lägga till händelser.", Toast.LENGTH_SHORT).show()
@@ -281,6 +322,17 @@ class MainActivity : AppCompatActivity() {
                 tv_liveTickerText.text = "${btnCustomButton3.text}\n${tv_liveTickerText.text}"
                 tv_liveTickerTeam.text = "$tv_myTeam\n${tv_liveTickerTeam.text}"
 
+                val newEvent = MatchEvents(1, null, "$chronoMinutesDb:$chronoSecondsDb", btnCustomButton3.text.toString(), "Hvetlanda Gif")
+
+                Toast.makeText(this, "$newEvent", Toast.LENGTH_SHORT).show()
+
+                GlobalScope.launch {
+                    delay(50)
+                    db.matchEventsDao().insertMatchEvent(newEvent)
+                }
+
+
+
 
             } else {
                 Toast.makeText(this, "Matchen måste startas innan du kan lägga till händelser.", Toast.LENGTH_SHORT).show()
@@ -308,6 +360,17 @@ class MainActivity : AppCompatActivity() {
                 tv_liveTickerTime.text = "$currentChrono\n${tv_liveTickerTime.text}"
                 tv_liveTickerText.text = "${btnCustomButton4.text}\n${tv_liveTickerText.text}"
                 tv_liveTickerTeam.text = "$tv_myTeam\n${tv_liveTickerTeam.text}"
+
+                val newEvent = MatchEvents(1, null, "$chronoMinutesDb:$chronoSecondsDb", btnCustomButton4.text.toString(), "Hvetlanda Gif")
+
+                Toast.makeText(this, "$newEvent", Toast.LENGTH_SHORT).show()
+
+                GlobalScope.launch {
+                    delay(50)
+                    db.matchEventsDao().insertMatchEvent(newEvent)
+                }
+
+
 
 
             } else {
