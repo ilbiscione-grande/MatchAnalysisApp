@@ -1,6 +1,5 @@
 package com.example.matchanalysisapp.adapters
 
-import android.app.ActionBar
 import android.content.Context
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -9,12 +8,9 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.VisibleForTesting
-import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.matchanalysisapp.data.MatchEvents
-import com.ilbiscione.MatchAnalysisApp.R
+import com.example.matchanalysisapp.R
 import kotlinx.android.synthetic.main.custom_item_row.view.*
 
 class ItemAdapter(

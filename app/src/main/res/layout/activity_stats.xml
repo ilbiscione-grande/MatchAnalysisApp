@@ -4,46 +4,207 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StatsActivity">
+    tools:context="com.example.matchanalysisapp.StatsActivity">
+
 
     <TextView
-        android:id="@+id/tv_statsEventTime"
+        android:id="@+id/tv_statsChosenMatch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/bg_rounded"
+        android:padding="7dp"
+        android:text="DET FINNS INGA MATCHER SPARADE"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_statsEventTime3" />
+
+
+    <TextView
+        android:id="@+id/tv_statsEventTime2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
-        android:text="TextView"
+        android:text="STATISTIK"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_statsChosenMatch" />
+
+
+    <TextView
+        android:id="@+id/tv_statsEventTime3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="VALD MATCH"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_statsEventText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/tv_statsEventTime"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_statsEventTeam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_matchStats"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_stats"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="300dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_statsEventTime2">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_cardViewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_stats1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:layout_constraintStart_toStartOf="@+id/cl_cardViewLayout"
+                app:layout_constraintTop_toTopOf="@id/cl_cardViewLayout"
+                tools:text="EventId" />
+
+            <TextView
+                android:id="@+id/tv_stats2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/cl_cardViewLayout"
+                app:layout_constraintTop_toBottomOf="@+id/tv_stats1"
+                tools:text="EventId" />
+
+            <TextView
+                android:id="@+id/tv_stats3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/cl_cardViewLayout"
+                app:layout_constraintTop_toBottomOf="@+id/tv_stats2"
+                tools:text="EventId" />
+
+            <TextView
+                android:id="@+id/tv_stats4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/cl_cardViewLayout"
+                app:layout_constraintTop_toBottomOf="@+id/tv_stats3"
+                tools:text="EventId" />
+
+            <TextView
+                android:id="@+id/tv_statsEventText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Det finns ingen statistik sparad"
+                app:layout_constraintEnd_toEndOf="@id/cl_cardViewLayout"
+                app:layout_constraintStart_toStartOf="@+id/cl_cardViewLayout"
+                app:layout_constraintTop_toTopOf="@id/cl_cardViewLayout" />
+
+            <TextView
+                android:id="@+id/tv_statsEventTeam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="@+id/cl_cardViewLayout"
+                app:layout_constraintTop_toTopOf="@id/cl_cardViewLayout"
+                tools:text="EventTeam" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tv_statsEventTime4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:text="HÄNDELSER"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_stats" />
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_eventsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tv_statsEventTime4" >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_matchStats"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_half_"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#616161"
+        android:textAlignment="center"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_half_"
+        app:layout_constraintStart_toStartOf="@+id/tv_half_"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_"
+        app:srcCompat="@drawable/ic_baseline_home_24" />
+
+    <ImageView
+        android:id="@+id/iv_btnMatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/tv_half_"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_"
+        app:srcCompat="@drawable/ic_sharp_sports_soccer_24" />
+
+    <ImageView
+        android:id="@+id/iv_btnStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_"
+        app:srcCompat="@drawable/ic_baseline_bar_chart_24" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

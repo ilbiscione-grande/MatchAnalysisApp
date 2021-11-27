@@ -5,10 +5,12 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class MatchEvents(
+    val matchDate : String,
     val matchID: Int,
     @PrimaryKey(autoGenerate = true)
     val eventID: Int?,
     val eventTime: String,
     val eventText: String,
-    val eventTeam: String
+    val eventTeam: String,
+    val eventOpposition: String
     )
