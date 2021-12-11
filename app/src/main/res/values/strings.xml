@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MatchAnalysisApp</string>
+
+
+    <string-array name="MatchLength">
+        <item>2x45</item>
+        <item>2x40</item>
+        <item>2x35</item>
+        <item>2x30</item>
+        <item>3x25</item>
+        <item>3x20</item>
+        <item>2x20</item>
+        <item>2x15</item>
+    </string-array>
+
 </resources>

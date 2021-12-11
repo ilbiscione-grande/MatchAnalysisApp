@@ -28,6 +28,8 @@ class StatsActivity : AppCompatActivity() {
         var stat_3 = 0
         var stat_4 = 0
 
+
+
         db = Room.databaseBuilder(
             applicationContext,
             MatchEventsDatabase::class.java,
@@ -35,62 +37,37 @@ class StatsActivity : AppCompatActivity() {
             .build()
 
 
-/*
-        var matchEventList = mutableListOf(
-            MatchEvents(1, null, "00:00", "Matchen startar", "Hvetlanda Gif"),
-            MatchEvents(1, null, "01:05", "Djupledsboll", "Hvetlanda Gif"),
-            MatchEvents(1, null, "01:15", "Avslut", "Hvetlanda Gif"),
-            MatchEvents(1, null, "03:27", "Kontring", "Hvetlanda Gif"),
-            MatchEvents(1, null, "04:57", "Avslut", "Hvetlanda Gif"),
-            MatchEvents(1, null, "04:59", "Mål", "Hvetlanda Gif")
-        )
-*/
-
-        //tv_statsEventTeam.text = matchEventList[3].toString()
-
-
-        //var testText = "${tv_cutom_button_1.text}"
-
 
         GlobalScope.launch {
 
 
+            // DELETE ALL EVENTS FROM DATABASE
             //db.matchEventsDao().deleteAllMatchEvents()
-
-            // ADD  ABOVE MUTABLE LIST TO DATABASE
-/*
-            var position = 0
-            for (matchEvent : MatchEvents in matchEventList) {
-
-                db.matchEventsDao().insertMatchEvent(matchEventList[position])
-
-                tv_statsEventText.text = "${tv_statsEventText.text} - Round $position, "
-
-                position += 1
-            }
-*/
-
 
 
 
                 // GET ALL MATCHEVENTS FROM DATABASE AND SHOW THEM IN RECYCLERVIEW
                 val allMatchEvents = db.matchEventsDao().getAllMatchEvents()
 
+                val allButtons = db.matchEventsDao().getAllButtons()
+
+
+            var testNr = 0
             for (i in allMatchEvents) {
 
                 tv_stats4.text = "${tv_stats4.text}\n ${i.eventText}"
 
-                if (i.eventText == "AVSLUT") {
+                if (i.eventText == allButtons[0].buttonText) {
                     stat_1 = stat_1 + 1
-                }else if (i.eventText == "ÅTERERÖVRING") {
+                }else if (i.eventText == allButtons[1].buttonText) {
                     stat_2 = stat_2 +1
-                }else if (i.eventText == "KONTRING") {
+                }else if (i.eventText == allButtons[2].buttonText) {
                     stat_3 = stat_3 +1
-                }else if (i.eventText == "DJUPLEDSBOLLAR") {
+                }else if (i.eventText == allButtons[3].buttonText) {
                     stat_4 = stat_4 +1
                 }
 
-
+                testNr += 1
 
             }
 
@@ -106,10 +83,10 @@ class StatsActivity : AppCompatActivity() {
                     "Match ${allMatchEvents[0].matchDate} vs ${allMatchEvents[0].eventTeam}"
                 tv_statsEventText.visibility = GONE
 
-                tv_stats1.text = "Avslut: $stat_1"
-                tv_stats2.text = "Återerövring: $stat_2"
-                tv_stats3.text = "Kontring: $stat_3"
-                tv_stats4.text = "Djupledsbollar: $stat_4"
+                tv_stats1.text = "${allButtons[0].buttonText}: $stat_1"
+                tv_stats2.text = "${allButtons[1].buttonText}: $stat_2"
+                tv_stats3.text = "${allButtons[2].buttonText}: $stat_3"
+                tv_stats4.text = "${allButtons[3].buttonText}: $stat_4"
             }
 
 

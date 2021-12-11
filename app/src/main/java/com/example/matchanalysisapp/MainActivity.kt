@@ -12,6 +12,7 @@ import androidx.room.Room
 import com.example.matchanalysisapp.MatchEventsDatabase
 import com.example.matchanalysisapp.data.MatchEvents
 import com.example.matchanalysisapp.StatsActivity
+import com.example.matchanalysisapp.data.ButtonTexts
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
@@ -67,6 +68,25 @@ class MainActivity : AppCompatActivity() {
             MatchEventsDatabase::class.java,
             "MatchEvents-DB"
         ).build()
+
+
+        GlobalScope.launch {
+            val buttons = db.matchEventsDao().getAllButtons()
+
+            var buttonNr = 0
+            var currentButton = ""
+
+            withContext(Dispatchers.Main) {
+
+                tv_cutom_button_1.text = buttons[0].buttonText
+                tv_cutom_button_2.text = buttons[1].buttonText
+                tv_cutom_button_3.text = buttons[2].buttonText
+                tv_cutom_button_4.text = buttons[3].buttonText
+
+            }
+
+        }
+
 
 
 /*
@@ -249,7 +269,25 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-            // BUTTON 1
+        GlobalScope.launch {
+            val buttons = db.matchEventsDao().getAllButtons()
+
+
+            /*    tv_cutom_button_1.text = buttons[0].buttonText
+            tv_cutom_button_2.text = buttons[1].buttonText
+            tv_cutom_button_3.text = buttons[2].buttonText
+            tv_cutom_button_4.text = buttons[3].buttonText*/
+
+            withContext(Dispatchers.Main) {
+                tv_cutom_button_1.text = buttons[0].buttonText
+                tv_cutom_button_2.text = buttons[1].buttonText
+                tv_cutom_button_3.text = buttons[2].buttonText
+                tv_cutom_button_4.text = buttons[3].buttonText
+            }
+        }
+
+
+        // BUTTON 1
             btnCustomButton1.setOnClickListener {
                 btnCustomButton1.setBackgroundResource(R.drawable.button_left_side_pushed)
 
@@ -450,6 +488,12 @@ class MainActivity : AppCompatActivity() {
                 intent = Intent(this, StatsActivity::class.java)
                 startActivity(intent)
             }
+
+        imageView.setOnClickListener() {
+            intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
         }
