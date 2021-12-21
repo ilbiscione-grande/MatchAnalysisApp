@@ -8,176 +8,101 @@
 
 
     <TextView
-        android:id="@+id/tv_profile_teamName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/nunito_sans"
-        android:text="Ditt namn:"
-        android:textColor="#000"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:id="@+id/tv_upperBg_settings"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:background="#2CA02C"
+        app:layout_constraintBottom_toTopOf="@+id/tv_homeTeam3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_profile_teamName7"
+        android:id="@+id/tv_profile_teamName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/nunito_sans"
-        android:text="Din klubb:"
+        android:text="Hemmamatch:"
         android:textColor="#000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profile_teamName" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_saveSettings" />
 
-    <TextView
-        android:id="@+id/tv_profile_teamName3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/nunito_sans"
-        android:text="Lagnamn:"
-        android:textColor="#000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam5" />
-
-    <TextView
-        android:id="@+id/tv_profile_teamName12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/nunito_sans"
-        android:text="Serie:"
-        android:textColor="#000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profile_teamName3" />
-
-    <TextView
-        android:id="@+id/tv_profile_teamName10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/nunito_sans"
-        android:text="Motståndare:"
-        android:textColor="#000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam6" />
-
-    <TextView
-        android:id="@+id/tv_profile_teamName14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/nunito_sans"
-        android:text="Matchlängd:"
-        android:textColor="#000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profile_teamName10" />
 
     <EditText
         android:id="@+id/et_fullName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
         android:fontFamily="@font/nunito_sans"
         android:hint="Ange ditt namn"
         android:textColor="#000"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_profile_teamName"
-        app:layout_constraintEnd_toStartOf="@+id/tv_profile_teamName4"
-        app:layout_constraintStart_toEndOf="@+id/tv_profile_teamName"
-        app:layout_constraintTop_toTopOf="@+id/tv_profile_teamName" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam3" />
 
     <EditText
         android:id="@+id/et_myClub"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:fontFamily="@font/nunito_sans"
-        android:hint="T ex Hvetlanda Gif"
+        android:hint="Din klubb, t ex Hvetlanda Gif"
         android:textColor="#000"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_profile_teamName7"
-        app:layout_constraintEnd_toStartOf="@+id/tv_profile_teamName4"
-        app:layout_constraintStart_toEndOf="@+id/tv_profile_teamName"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profile_teamName" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_fullName"
+        app:layout_constraintStart_toStartOf="@+id/et_fullName"
+        app:layout_constraintTop_toBottomOf="@+id/et_fullName" />
 
     <EditText
         android:id="@+id/et_myTeam"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_sans"
-        android:hint="T ex P05"
+        android:hint="Ditt lag, t ex P05 eller A-lag"
         android:textColor="#000"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_profile_teamName3"
-        app:layout_constraintEnd_toStartOf="@+id/tv_profile_teamName4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_profile_teamName"
-        app:layout_constraintTop_toTopOf="@+id/tv_profile_teamName3"
-        app:layout_constraintVertical_bias="0.277" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_fullName"
+        app:layout_constraintStart_toStartOf="@+id/et_fullName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam5" />
 
     <EditText
         android:id="@+id/et_division"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:fontFamily="@font/nunito_sans"
-        android:hint="T ex NV1"
+        android:hint="Division, ex Nv1 eller Superettan"
         android:textColor="#000"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_profile_teamName12"
-        app:layout_constraintEnd_toStartOf="@+id/tv_profile_teamName4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_profile_teamName"
-        app:layout_constraintTop_toTopOf="@+id/tv_profile_teamName12"
-        app:layout_constraintVertical_bias="0.277" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_fullName"
+        app:layout_constraintStart_toStartOf="@+id/et_fullName"
+        app:layout_constraintTop_toBottomOf="@+id/et_myTeam" />
 
     <EditText
         android:id="@+id/et_oppostionTeam"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_sans"
         android:hint="Motståndarnas klubb"
         android:textColor="#000"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_profile_teamName10"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/tv_profile_teamName4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_profile_teamName10"
-        app:layout_constraintTop_toTopOf="@+id/tv_profile_teamName10"
-        app:layout_constraintVertical_bias="0.277" />
+        app:layout_constraintStart_toStartOf="@+id/et_fullName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam6" />
 
-    <TextView
+    <ImageView
         android:id="@+id/tv_profile_teamName4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
-        android:background="@drawable/button_left_side_pushed"
         android:fontFamily="@font/nunito_sans"
         android:paddingStart="8dp"
         android:paddingTop="2dp"
@@ -188,14 +113,14 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/et_fullName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_profile_teamName" />
+        app:layout_constraintTop_toTopOf="@+id/et_fullName"
+        app:srcCompat="@drawable/ic_baseline_not_done_circle_outline_24" />
 
-    <TextView
+    <ImageView
         android:id="@+id/tv_profile_teamName9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
-        android:background="@drawable/button_left_side_pushed"
         android:fontFamily="@font/nunito_sans"
         android:paddingStart="8dp"
         android:paddingTop="2dp"
@@ -204,15 +129,16 @@
         android:text="SPARA"
         android:textColor="#000"
         android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_division"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_profile_teamName7" />
+        app:layout_constraintTop_toBottomOf="@+id/et_myTeam"
+        app:srcCompat="@drawable/ic_baseline_not_done_circle_outline_24" />
 
-    <TextView
+    <ImageView
         android:id="@+id/tv_profile_teamName6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
-        android:background="@drawable/button_left_side_pushed"
         android:fontFamily="@font/nunito_sans"
         android:paddingStart="8dp"
         android:paddingTop="2dp"
@@ -221,37 +147,114 @@
         android:text="SPARA"
         android:textColor="#000"
         android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_myTeam"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_profile_teamName3" />
+        app:layout_constraintTop_toTopOf="@+id/et_myTeam"
+        app:srcCompat="@drawable/ic_baseline_not_done_circle_outline_24" />
+
+    <ImageView
+        android:id="@+id/tv_profile_teamName19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/nunito_sans"
+        android:paddingStart="8dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="2dp"
+        android:text="SPARA"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_myClub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_fullName"
+        app:srcCompat="@drawable/ic_baseline_not_done_circle_outline_24" />
+
+    <ImageView
+        android:id="@+id/tv_profile_teamName36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/nunito_sans"
+        android:paddingStart="8dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="2dp"
+        android:text="SPARA"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_matchLength"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_oppostionTeam"
+        app:srcCompat="@drawable/ic_baseline_not_done_circle_outline_24" />
+
+    <ImageView
+        android:id="@+id/tv_profile_teamName46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/nunito_sans"
+        android:paddingStart="8dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="2dp"
+        android:text="SPARA"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_matchHomeAway"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner_matchHomeAway"
+        app:srcCompat="@drawable/ic_baseline_not_done_circle_outline_24" />
+
+
+    <ImageView
+        android:id="@+id/tv_profile_teamName26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/nunito_sans"
+        android:paddingStart="8dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="2dp"
+        android:text="SPARA"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_oppostionTeam"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_oppostionTeam"
+        app:srcCompat="@drawable/ic_baseline_not_done_circle_outline_24" />
+
 
     <TextView
         android:id="@+id/btn_saveSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/button_left_side_pushed"
-        android:fontFamily="@font/nunito_sans"
-        android:paddingStart="8dp"
-        android:paddingTop="2dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="2dp"
+        android:fontFamily="@font/cabin_bold"
+        android:paddingStart="40dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="40dp"
+        android:paddingBottom="10dp"
         android:text="SPARA"
         android:textColor="#000"
-        android:textSize="14sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_matchLength" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_matchHomeAway" />
 
     <TextView
         android:id="@+id/tv_homeTeam3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/nunito_sans"
         android:text="PROFIL"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -261,12 +264,12 @@
         android:id="@+id/tv_homeTeam5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/nunito_sans"
         android:text="LAG"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -276,105 +279,36 @@
         android:id="@+id/tv_homeTeam6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/nunito_sans"
         android:text="MATCH"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_myTeam" />
+        app:layout_constraintTop_toBottomOf="@+id/et_division" />
 
     <TextView
         android:id="@+id/tv_homeTeam4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/nunito_sans"
+        android:fontFamily="@font/cabin_bold"
         android:text="INSTÄLLNINGAR"
         android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_half_3"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/button_left_side"
-        android:textAlignment="center"
-        android:textColor="#000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_homeTeam2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/nunito_sans"
-        android:text="LIVE TICKER"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tv_half_3"
-        app:layout_constraintStart_toStartOf="@+id/tv_half_3"
-        app:layout_constraintTop_toTopOf="@+id/tv_half_3" />
-
-    <TextView
-        android:id="@+id/tv_liveTickerText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/nunito_sans"
-        android:textColor="#000"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/tv_liveTickerTime"
-        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam2"
-        tools:text="Händelse" />
-
-    <TextView
-        android:id="@+id/tv_liveTickerTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/nunito_sans"
-        android:textColor="#000"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_half_3"
-        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam2"
-        tools:text="14:15" />
-
-    <TextView
-        android:id="@+id/tv_liveTickerTeam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:fontFamily="@font/nunito_sans"
-        android:textColor="#000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_half_3"
-        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam2"
-        tools:text="Lagnamn" />
-
-    <TextView
         android:id="@+id/tv_half_"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:background="#616161"
         android:textAlignment="center"
         android:textColor="#000"
@@ -416,12 +350,43 @@
         android:id="@+id/spinner_matchLength"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
         android:entries="@array/MatchLength"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_profile_teamName14"
-        app:layout_constraintEnd_toEndOf="@+id/et_oppostionTeam"
-        app:layout_constraintStart_toEndOf="@+id/tv_profile_teamName14"
-        app:layout_constraintTop_toTopOf="@+id/tv_profile_teamName14" />
+        app:layout_constraintEnd_toEndOf="@+id/et_fullName"
+        app:layout_constraintStart_toStartOf="@+id/et_fullName"
+        app:layout_constraintTop_toBottomOf="@+id/et_oppostionTeam" />
+
+    <Spinner
+        android:id="@+id/spinner_matchHomeAway"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:entries="@array/HomeAway"
+        app:layout_constraintEnd_toEndOf="@+id/et_fullName"
+        app:layout_constraintStart_toStartOf="@+id/et_fullName"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_matchLength" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_profile_teamName2"
+        app:layout_constraintStart_toEndOf="@+id/tv_profile_teamName2"
+        app:layout_constraintTop_toTopOf="@+id/tv_profile_teamName2">
+
+        <RadioButton
+            android:id="@+id/radio_Yes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ja" />
+
+        <RadioButton
+            android:id="@+id/radio_No"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nej" />
+    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

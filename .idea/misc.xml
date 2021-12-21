@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/thoma/StudioProjects/MatchAnalysisApp/app/src/main/res/layout/activity_home.xml" value="0.33" />
-        <entry key="..\:/Users/thoma/StudioProjects/MatchAnalysisApp/app/src/main/res/layout/activity_main.xml" value="0.23072916666666668" />
+        <entry key="..\:/Users/thoma/StudioProjects/MatchAnalysisApp/app/src/main/res/layout/activity_landing.xml" value="0.25" />
+        <entry key="..\:/Users/thoma/StudioProjects/MatchAnalysisApp/app/src/main/res/layout/activity_main.xml" value="0.75" />
+        <entry key="..\:/Users/thoma/StudioProjects/MatchAnalysisApp/app/src/main/res/layout/activity_stats.xml" value="0.5" />
+        <entry key="..\:/Users/thoma/StudioProjects/MatchAnalysisApp/app/src/main/res/layout/spinner_list_match_length.xml" value="0.2006340579710145" />
         <entry key="app/src/main/res/drawable-v24/bg_Green_Rounded.xml" value="0.559375" />
         <entry key="app/src/main/res/drawable-v24/bg_rounded.xml" value="0.33958333333333335" />
         <entry key="app/src/main/res/drawable-v24/ic_baseline_bar_chart_24.xml" value="0.1" />

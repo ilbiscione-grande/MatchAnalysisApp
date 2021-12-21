@@ -12,5 +12,6 @@ data class SettingsData(
     val myTeam: String,
     val division: String,
     val opposition: String,
-    val matchLength: String
+    val matchLength: String,
+    val homeMatch: Boolean
     )

@@ -6,11 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tv_upperBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/upper_bg"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_cutom_button_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/tv_half_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/halves_not_started"
         android:textAlignment="center"
         android:textColor="#000"
@@ -22,18 +36,22 @@
         android:id="@+id/tv_scoreHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/cabin_bold"
+        android:text="0"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="60sp"
         app:layout_constraintEnd_toStartOf="@+id/c_meter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_half_1"
-        tools:text="3" />
+        tools:text="0" />
 
     <TextView
         android:id="@+id/tv_scoreAway"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/cabin_bold"
+        android:text="0"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="60sp"
@@ -73,17 +91,17 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="-10dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/button_left_side"
-        android:fontFamily="@font/nunito_sans"
+        android:fontFamily="@font/cabin_bold"
         android:gravity="center_horizontal|center_vertical"
         android:paddingStart="0dp"
         android:text="AVSLUT"
         android:textColor="#000"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_playPause"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_playPause"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_playPause" />
 
     <TextView
         android:id="@+id/tv_cutom_button_3"
@@ -92,14 +110,14 @@
         android:layout_marginStart="-10dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/button_left_side"
-        android:fontFamily="@font/nunito_sans"
+        android:fontFamily="@font/cabin_bold"
         android:gravity="center_horizontal|center_vertical"
         android:paddingStart="0dp"
         android:text="DJUPLEDSBOLLAR"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_playPause"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_cutom_button_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_1" />
 
@@ -179,19 +197,18 @@
         android:id="@+id/tv_cutom_button_2"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="25dp"
         android:layout_marginEnd="-10dp"
         android:background="@drawable/button_left_side"
-        android:fontFamily="@font/nunito_sans"
+        android:fontFamily="@font/cabin_bold"
         android:gravity="center_horizontal|center_vertical"
         android:paddingStart="0dp"
         android:text="ÅTERERÖVRING"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_stop"
-        app:layout_constraintTop_toBottomOf="@+id/tv_homeTeam" />
+        app:layout_constraintStart_toStartOf="@+id/btn_stop"
+        app:layout_constraintTop_toTopOf="@+id/tv_cutom_button_1" />
 
     <TextView
         android:id="@+id/tv_cutom_button_4"
@@ -200,15 +217,15 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="-10dp"
         android:background="@drawable/button_left_side"
-        android:fontFamily="@font/nunito_sans"
+        android:fontFamily="@font/cabin_bold"
         android:gravity="center_horizontal|center_vertical"
         android:paddingStart="0dp"
         android:text="KONTRING"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_stop"
+        app:layout_constraintStart_toStartOf="@+id/tv_cutom_button_2"
         app:layout_constraintTop_toBottomOf="@+id/tv_cutom_button_2" />
 
     <TextView
@@ -401,7 +418,7 @@
     <TextView
         android:id="@+id/tv_half_"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:background="#616161"
         android:textAlignment="center"
         android:textColor="#000"
@@ -409,10 +426,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_btnHome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginEnd="-10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_half_"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_" />
+
+    <TextView
+        android:id="@+id/tv_btnStats"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginEnd="-10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_half_"
+        app:layout_constraintEnd_toEndOf="@+id/iv_btnStats"
+        app:layout_constraintStart_toStartOf="@+id/iv_btnStats"
+        app:layout_constraintTop_toTopOf="@+id/tv_half_" />
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tv_half_"
         app:layout_constraintStart_toStartOf="@+id/tv_half_"
@@ -421,8 +460,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/tv_half_"
@@ -431,8 +470,8 @@
 
     <ImageView
         android:id="@+id/iv_btnStats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -462,13 +501,88 @@
         android:id="@+id/photoView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
         android:visibility="invisible"
+        android:gravity="center_horizontal"
         android:background="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:text="Du har redan sparat en match. Om du startar en ny kommer den gamla att försvinna"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="@+id/c_meter" />
+
+
+    <TextView
+        android:id="@+id/tv_matchSaved_Ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:padding="8dp"
+        android:background="@drawable/bg_rounded"
+        android:text="OK, Jag vill ändå starta en ny match"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/photoView"
+        app:layout_constraintEnd_toEndOf="@+id/photoView"
+        app:layout_constraintBottom_toBottomOf="@+id/photoView" />
+
+    <TextView
+        android:id="@+id/tv_matchSaved_Abort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/bg_rounded"
+        android:text="Nej, Visa statistik på den sparade matchen"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/photoView"
+        app:layout_constraintEnd_toEndOf="@+id/photoView"
+        app:layout_constraintBottom_toBottomOf="@+id/photoView" />
+
+
+    <TextView
+        android:id="@+id/tv_leavePage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/cardview_dark_background"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="Om du lämnar denna sidan nu så kommer matchen att avbrtas och nollställas."
+        android:textColor="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/c_meter" />Du har redan sparat en match. Om du startar en ny kommer den gamla att försvinna
+
+
+    <TextView
+        android:id="@+id/tv_leavePage_Ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:padding="8dp"
+        android:background="@drawable/bg_rounded"
+        android:text="OK, Jag vill ändå gå vidare"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/photoView"
+        app:layout_constraintEnd_toEndOf="@+id/photoView"
+        app:layout_constraintBottom_toBottomOf="@+id/photoView" />
+
+    <TextView
+        android:id="@+id/tv_leavePage_Abort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/bg_rounded"
+        android:text="Nej, stanna på denna sidan istället"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/photoView"
+        app:layout_constraintEnd_toEndOf="@+id/photoView"
+        app:layout_constraintBottom_toBottomOf="@+id/photoView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

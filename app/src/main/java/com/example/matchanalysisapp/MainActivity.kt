@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.SystemClock
+import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import android.widget.*
 import androidx.lifecycle.lifecycleScope
@@ -27,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val tv_myTeam = "Hvetlanda Gif"
 
         val btnStats = findViewById<ImageView>(R.id.iv_btnStats)
 
@@ -44,10 +44,12 @@ class MainActivity : AppCompatActivity() {
         val btnStopButton = findViewById<ImageView>(R.id.btn_stop)
         var tvHalfText = findViewById<TextView>(R.id.tv_half_text)
         var tvHalf1 = findViewById<ImageView>(R.id.tv_half_1)
+        var pushedMenuButton = ""
 
         val c_meter = findViewById<Chronometer>(R.id.c_meter)
         var chronoStatus = "notActive"
         var chronoTime: Int = 0
+        var tv_myTeam = ""
 
 
         var matchStatus = "notStarted"
@@ -60,7 +62,6 @@ class MainActivity : AppCompatActivity() {
 
 
         var eventOpposition = "Motståndare"
-
 
 
         db = Room.databaseBuilder(
@@ -76,6 +77,20 @@ class MainActivity : AppCompatActivity() {
             var buttonNr = 0
             var currentButton = ""
 
+            val settings = db.matchEventsDao().getAllSettings()
+
+            val matchSaved = db.matchEventsDao().getAllMatchEvents()
+
+
+            // CHECK IF THERE IS ALREADY A MATCH SAVED
+            if (matchSaved.isNotEmpty()) {
+
+                photoView.visibility = VISIBLE
+                tv_matchSaved_Ok.visibility = VISIBLE
+                tv_matchSaved_Abort.visibility = VISIBLE
+
+            }
+
             withContext(Dispatchers.Main) {
 
                 tv_cutom_button_1.text = buttons[0].buttonText
@@ -83,31 +98,37 @@ class MainActivity : AppCompatActivity() {
                 tv_cutom_button_3.text = buttons[2].buttonText
                 tv_cutom_button_4.text = buttons[3].buttonText
 
+
+                if (settings.isNotEmpty()) {
+                    tv_myTeam = settings[0].myClub
+                    if (settings[0].homeMatch) {
+                        tv_homeTeam.text = settings[0].myClub
+                        tv_awayTeam.text = settings[0].opposition
+                    } else {
+                        tv_awayTeam.text = settings[0].myClub
+                        tv_homeTeam.text = settings[0].opposition
+                    }
+                }else{
+
+                    photoView.text = "Du måste först spara vilka lag som ska mötas innan du kan starta en match. Du lägger till Hemma- och bortalag på inställningssidan. Den når du genom att trycka på Hem-knappen i menyn längst ner på sidan."
+                    tv_matchSaved_Abort.visibility = INVISIBLE
+                    tv_matchSaved_Ok.visibility = INVISIBLE
+                    tv_homeTeam.text = "Inget lag sparat"
+                    tv_awayTeam.text = "Inget lag sparat"
+
+                }
             }
 
         }
 
 
 
-/*
-        GlobalScope.launch(Dispatchers.Default) {
-            val currentMatch = db.matchEventsDao().getAllMatchEvents()
-
-            withContext(Dispatchers.Main) {
-                // if we use `Dispatchers.Main` as a coroutine context next two lines will be executed on UI thread.
-                if (currentMatch.isNotEmpty()) {
-
-                    photoView.visibility = VISIBLE
-
-                    }
-                }
-            }
-*/
 
             // BUTTON PLAY AND PAUSE THE CLOCK
             btnPlayPauseButton.setOnClickListener {
 
 
+                // IF MATCH IS NOT STARTED AT ALL THEN RUN THIS
                 if (matchStatus == "notStarted") {
 
                     matchStatus = "started"
@@ -119,6 +140,7 @@ class MainActivity : AppCompatActivity() {
                     tv_liveTickerTeam.text = tv_myTeam
 
 
+                    // CHECK IF MATCH IS PAUSED OR NOT
                     if (chronoStatus == "paused") {
                         c_meter.base = SystemClock.elapsedRealtime() - chronoTime
                     } else if (chronoStatus == "started") {
@@ -127,12 +149,15 @@ class MainActivity : AppCompatActivity() {
                         c_meter.base = SystemClock.elapsedRealtime()
                     }
 
+                    // START THE CHRONOMETER
                     c_meter.start()
                     chronoStatus = "started"
 
 
+                    // IF MATCH HAS BEEN STARTED
                 } else {
 
+                    // CHECK IF MATCH IS PAUSED THEN RUN
                     if (matchStatus == "paused") {
 
                         matchStatus = "started"
@@ -157,6 +182,7 @@ class MainActivity : AppCompatActivity() {
                         chronoStatus = "started"
 
 
+                        // IF MATCH IS ALREADY STOPPED THEN RUN THIS TO START 2ND HALF
                     } else if (matchStatus == "stopped") {
 
 
@@ -165,7 +191,7 @@ class MainActivity : AppCompatActivity() {
 
                         tvHalf1.setImageResource(R.drawable.halves_second_half)
 
-                        var currentChrono = c_meter.text.toString()
+                        var currentChrono = "45:00"
                         var chronoMinutesDb = c_meter.text.toString().substringBefore(":").toInt()
                         var chronoSecondsDb = c_meter.text.toString().substringAfter(":").toInt()
 
@@ -183,6 +209,7 @@ class MainActivity : AppCompatActivity() {
                             c_meter.base = SystemClock.elapsedRealtime()
                         }
 
+                        c_meter.base = SystemClock.elapsedRealtime() - 2_700_000
                         c_meter.start()
                         chronoStatus = "started"
 
@@ -219,7 +246,7 @@ class MainActivity : AppCompatActivity() {
                 var chronoSecondsDb = c_meter.text.toString().substringAfter(":").toInt()
 
                 c_meter.stop()
-                c_meter.base = SystemClock.elapsedRealtime()
+                //c_meter.base = SystemClock.elapsedRealtime()
 
 
                 chronoStatus = "reset"
@@ -236,9 +263,9 @@ class MainActivity : AppCompatActivity() {
                 } else if (currentHalf == 2) {
                     tvHalf1.setImageResource(R.drawable.halves_end)
 
-                    tv_liveTickerText.text = "Matchen är slut\n${tv_liveTickerText.text}"
+                    tv_liveTickerText.text = "2a halvlek är slut\n${tv_liveTickerText.text}"
                     tv_liveTickerTime.text =
-                        "$currentMinute:$currentSecond\n${tv_liveTickerTime.text}"
+                        "$currentChrono\n${tv_liveTickerTime.text}"
                     tv_liveTickerTeam.text = "$tv_myTeam\n${tv_liveTickerTeam.text}"
 
                 }
@@ -250,6 +277,7 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
+
                 // OM MATCHEN HAR STARTAT SÅ HÄNDER NEDANSTÅENDE, INNAN DESS FUNGERAR INTE STOPP-KNAPPEN
                 if (matchStatus != "notStarted") {
                     matchStatus = "stopped"
@@ -258,10 +286,17 @@ class MainActivity : AppCompatActivity() {
                     //OM HALVLEK/PERIOD GÅR ÖVER FÖRBESTÄMT ANTAL TAR MATCHEN SLUT, PROMPTA OM ATT STARTA NY MATCH
                     if (currentHalf > nrOfPeriods) {
 
+
+                        Toast.makeText(this, "$currentHalf, $nrOfPeriods", Toast.LENGTH_LONG).show()
+
                         //   tvHalfText.text = "end of match"
                         matchStatus = "finished"
 
                         //PROMPTA ANVÄNDAREN OM ATT STARTA NY MATCH
+                        textView.text = "Matchen är slut. Alla registrerade händelser " +
+                                "från matchen hittar du på statistik-sidan. Om du vill starta en ny" +
+                                "match så går du tillbaka till hem-sidan och skriver in nya motståndaren" +
+                                "för att sen komma tillbaka hit igen."
                     }
 
 
@@ -316,7 +351,6 @@ class MainActivity : AppCompatActivity() {
                         "$eventOpposition"
                     )
 
-                    Toast.makeText(this, "${todaysDate.format(Date())}", Toast.LENGTH_SHORT).show()
 
                     GlobalScope.launch {
                         delay(50)
@@ -363,7 +397,6 @@ class MainActivity : AppCompatActivity() {
                         "$eventOpposition"
                     )
 
-                    Toast.makeText(this, "$currentChrono", Toast.LENGTH_SHORT).show()
 
                     GlobalScope.launch {
                         delay(50)
@@ -413,7 +446,6 @@ class MainActivity : AppCompatActivity() {
                         "$eventOpposition"
                     )
 
-                    Toast.makeText(this, "$currentChrono", Toast.LENGTH_SHORT).show()
 
                     GlobalScope.launch {
                         delay(50)
@@ -463,8 +495,6 @@ class MainActivity : AppCompatActivity() {
                         "$eventOpposition"
                     )
 
-                    Toast.makeText(this, "$chronoMinutesDb:$chronoSecondsDb", Toast.LENGTH_SHORT)
-                        .show()
 
                     GlobalScope.launch {
                         delay(50)
@@ -483,15 +513,63 @@ class MainActivity : AppCompatActivity() {
             }
 
 
+        tv_matchSaved_Ok.setOnClickListener {
+            photoView.visibility = INVISIBLE
+            tv_matchSaved_Ok.visibility = INVISIBLE
+            tv_matchSaved_Abort.visibility = INVISIBLE
 
-            btnStats.setOnClickListener() {
-                intent = Intent(this, StatsActivity::class.java)
-                startActivity(intent)
+            GlobalScope.launch {
+                db.matchEventsDao().deleteAllMatchEvents()
+            }
+        }
+
+        tv_matchSaved_Abort.setOnClickListener {
+            startActivity(Intent(this, StatsActivity::class.java))
+        }
+
+
+
+
+        tv_btnStats.setOnClickListener() {
+
+                pushedMenuButton = "stats"
+
+                if (matchStatus == "notStarted") {
+                    intent = Intent(this, StatsActivity::class.java)
+                    startActivity(intent)
+                }else{
+                    tv_leavePage.visibility = VISIBLE
+                    tv_leavePage_Ok.visibility = VISIBLE
+                    tv_leavePage_Abort.visibility = VISIBLE
+                }
             }
 
-        imageView.setOnClickListener() {
-            intent = Intent(this, HomeActivity::class.java)
+        tv_btnHome.setOnClickListener() {
+
+           pushedMenuButton = "home"
+
+            if (matchStatus == "notStarted") {
+                intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
+            }else{
+                tv_leavePage.visibility = VISIBLE
+                tv_leavePage_Ok.visibility = VISIBLE
+                tv_leavePage_Abort.visibility = VISIBLE
+            }
+
+        }
+
+        tv_leavePage_Ok.setOnClickListener {
+            if (pushedMenuButton == "home") {
+                startActivity(Intent(this,HomeActivity::class.java))
+            }else if (pushedMenuButton == "stats") {
+                startActivity(Intent(this,StatsActivity::class.java))
+            }
+        }
+        tv_leavePage_Abort.setOnClickListener {
+            tv_leavePage.visibility = INVISIBLE
+            tv_leavePage_Ok.visibility = INVISIBLE
+            tv_leavePage_Abort.visibility = INVISIBLE
         }
 
 

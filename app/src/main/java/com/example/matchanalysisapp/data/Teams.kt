@@ -7,5 +7,6 @@ import androidx.room.PrimaryKey
 data class Teams (
     @PrimaryKey(autoGenerate = true)
     val teamId: Int?,
+    val clubName: String,
     val teamName: String,
         )

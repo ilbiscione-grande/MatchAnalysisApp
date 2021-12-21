@@ -3,6 +3,7 @@
 
 
     <string-array name="MatchLength">
+        <item>Matchlängd</item>
         <item>2x45</item>
         <item>2x40</item>
         <item>2x35</item>
@@ -11,6 +12,13 @@
         <item>3x20</item>
         <item>2x20</item>
         <item>2x15</item>
+    </string-array>
+
+
+    <string-array name="HomeAway">
+        <item>Hemma/bortamatch</item>
+        <item>Hemma</item>
+        <item>Borta</item>
     </string-array>
 
 </resources>
