@@ -2,8 +2,8 @@ package com.example.matchanalysisapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.View.GONE
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.matchanalysisapp.adapters.ItemAdapter
@@ -55,7 +55,7 @@ class StatsActivity : AppCompatActivity() {
             var testNr = 0
             for (i in allMatchEvents) {
 
-                tv_stats4.text = "${tv_stats4.text}\n ${i.eventText}"
+                //tv_stats4_box.text = "${tv_stats4_box.text}\n ${i.eventText}"
 
                 if (i.eventText == allButtons[0].buttonText) {
                     stat_1 = stat_1 + 1
@@ -81,13 +81,8 @@ class StatsActivity : AppCompatActivity() {
             if (allMatchEvents.isNotEmpty()) {
                 tv_statsChosenMatch.text =
                     "Match ${allMatchEvents[0].matchDate} vs ${allMatchEvents[0].eventTeam}"
-                tv_statsEventText.visibility = GONE
+                textView14.visibility = GONE
 
-                tv_stats1.text = "${allButtons[0].buttonText}: $stat_1"
-                tv_stats2.text = "${allButtons[1].buttonText}: $stat_2"
-                tv_stats3.text = "${allButtons[2].buttonText}: $stat_3"
-                tv_stats4.text = "${allButtons[3].buttonText}: $stat_4"
-            }
 
 
                 val adapter = ItemAdapter(allMatchEvents)
@@ -97,11 +92,55 @@ class StatsActivity : AppCompatActivity() {
                 rv_matchStats.setHasFixedSize(true)
 
 
+                tv_stats1_text.text = "${allButtons[0].buttonText}"
+                tv_stats1_amount.text = "$stat_1"
+                tv_stats2_text.text = "${allButtons[1].buttonText}"
+                tv_stats2_amount.text = "$stat_2"
+                tv_stats3_text.text = "${allButtons[2].buttonText}"
+                tv_stats3_amount.text = "$stat_3"
+                tv_stats4_text.text = "${allButtons[3].buttonText}"
+                tv_stats4_amount.text = "$stat_4"
+            }else {
+                tv_stats1_amount.text = "$stat_1"
+                tv_stats2_amount.text = "$stat_2"
+                tv_stats3_amount.text = "$stat_3"
+                tv_stats4_amount.text = "$stat_4"
+
+
+            }
+
+
+
+
         }
 
 
         iv_btnMatch.setOnClickListener() {
+
+
+            iv_btnMatch.setImageResource(R.drawable.ic_sharp_sports_soccer_24_pressed)
+
+            Handler().postDelayed({
+                iv_btnMatch.setImageResource(R.drawable.ic_sharp_sports_soccer_24)
+            }, 50)
+
+
+
             intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        iv_statsHome.setOnClickListener() {
+
+            iv_statsHome.setImageResource(R.drawable.ic_baseline_home_24_pressed)
+
+            Handler().postDelayed({
+                iv_statsHome.setImageResource(R.drawable.ic_baseline_home_24)
+            }, 50)
+
+
+
+            intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
 

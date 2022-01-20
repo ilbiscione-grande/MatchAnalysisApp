@@ -29,7 +29,7 @@ class ItemAdapter(
             tv_actionsTime.text = matchEvents[position].eventTime
             tv_actionsText.text = matchEvents[position].eventText
             tv_actionsTeam.text = matchEvents[position].eventTeam
-            tv_actionsId.text = matchEvents[position].eventID.toString()
+           // tv_actionsId.text = matchEvents[position].eventID.toString()
 
             tv_extra_info_event.text = matchEvents[position].eventText
             tv_extra_info_time.text = matchEvents[position].eventTime

@@ -29,6 +29,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
         android:text="STATISTIK"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_statsChosenMatch" />
@@ -41,6 +42,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="VALD MATCH"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +50,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_stats"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="280dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:clickable="true"
@@ -66,56 +68,155 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/tv_stats1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                app:layout_constraintStart_toStartOf="@+id/cl_cardViewLayout"
-                app:layout_constraintTop_toTopOf="@id/cl_cardViewLayout"
-                tools:text="EventId" />
-
-            <TextView
-                android:id="@+id/tv_stats2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@+id/cl_cardViewLayout"
-                app:layout_constraintTop_toBottomOf="@+id/tv_stats1"
-                tools:text="EventId" />
-
-            <TextView
-                android:id="@+id/tv_stats3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@+id/cl_cardViewLayout"
-                app:layout_constraintTop_toBottomOf="@+id/tv_stats2"
-                tools:text="EventId" />
-
-            <TextView
-                android:id="@+id/tv_stats4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@+id/cl_cardViewLayout"
-                app:layout_constraintTop_toBottomOf="@+id/tv_stats3"
-                tools:text="EventId" />
-
-            <TextView
-                android:id="@+id/tv_statsEventText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="Det finns ingen statistik sparad"
-                app:layout_constraintEnd_toEndOf="@id/cl_cardViewLayout"
+                android:id="@+id/tv_stats1_box"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_rounded_green"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/tv_stats2_box"
                 app:layout_constraintStart_toStartOf="@+id/cl_cardViewLayout"
                 app:layout_constraintTop_toTopOf="@id/cl_cardViewLayout" />
 
             <TextView
-                android:id="@+id/tv_statsEventTeam"
+                android:id="@+id/tv_stats2_box"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_rounded_green"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_stats1_box"
+                app:layout_constraintTop_toTopOf="@+id/tv_stats1_box" />
+
+            <TextView
+                android:id="@+id/tv_stats3_box"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/bg_rounded_green"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_stats1_box"
+                app:layout_constraintStart_toStartOf="@+id/tv_stats1_box"
+                app:layout_constraintTop_toBottomOf="@+id/tv_stats1_box" />
+
+            <TextView
+                android:id="@+id/tv_stats4_box"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_rounded_green"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_stats2_box"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_stats2_box"
+                app:layout_constraintTop_toTopOf="@+id/tv_stats3_box" />
+
+            <TextView
+                android:id="@+id/tv_stats1_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                app:layout_constraintEnd_toEndOf="@+id/cl_cardViewLayout"
-                app:layout_constraintTop_toTopOf="@id/cl_cardViewLayout"
-                tools:text="EventTeam" />
+                android:layout_marginTop="15dp"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tv_stats1_box"
+                app:layout_constraintStart_toStartOf="@+id/tv_stats1_box"
+                app:layout_constraintTop_toTopOf="@+id/tv_stats1_box"
+                tools:text="Avslut" />
+
+            <TextView
+                android:id="@+id/tv_stats3_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tv_stats3_box"
+                app:layout_constraintStart_toStartOf="@+id/tv_stats3_box"
+                app:layout_constraintTop_toTopOf="@+id/tv_stats3_box"
+                tools:text="Avslut" />
+
+            <TextView
+                android:id="@+id/tv_stats2_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tv_stats2_box"
+                app:layout_constraintStart_toStartOf="@+id/tv_stats2_box"
+                app:layout_constraintTop_toTopOf="@+id/tv_stats1_box"
+                tools:text="Avslut" />
+
+            <TextView
+                android:id="@+id/tv_stats4_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tv_stats4_box"
+                app:layout_constraintStart_toStartOf="@+id/tv_stats4_box"
+                app:layout_constraintTop_toTopOf="@+id/tv_stats4_box"
+                tools:text="Avslut" />
+
+            <TextView
+                android:id="@+id/tv_stats1_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="#FFFFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tv_stats1_box"
+                app:layout_constraintStart_toStartOf="@+id/tv_stats1_box"
+                app:layout_constraintTop_toBottomOf="@+id/tv_stats1_text"
+                tools:text="8" />
+
+            <TextView
+                android:id="@+id/tv_stats3_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="#FFFFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tv_stats3_box"
+                app:layout_constraintStart_toStartOf="@+id/tv_stats3_box"
+                app:layout_constraintTop_toBottomOf="@+id/tv_stats3_text"
+                tools:text="8" />
+
+            <TextView
+                android:id="@+id/tv_stats2_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="#FFFFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tv_stats2_box"
+                app:layout_constraintStart_toStartOf="@+id/tv_stats2_box"
+                app:layout_constraintTop_toBottomOf="@+id/tv_stats1_text"
+                tools:text="8" />
+
+            <TextView
+                android:id="@+id/tv_stats4_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="#FFFFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tv_stats4_box"
+                app:layout_constraintStart_toStartOf="@+id/tv_stats4_box"
+                app:layout_constraintTop_toBottomOf="@+id/tv_stats4_text"
+                tools:text="8" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -128,6 +229,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
         android:text="HÄNDELSER"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cv_stats" />
@@ -146,6 +248,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_statsEventTime4">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Det finns inga händelser registrerade i vald match"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="16sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_matchStats"
@@ -167,7 +278,7 @@
         android:id="@+id/tv_half_"
         android:layout_width="0dp"
         android:layout_height="70dp"
-        android:background="#616161"
+        android:background="@drawable/bottom_menu_gradient"
         android:textAlignment="center"
         android:textColor="#000"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -175,7 +286,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_statsHome"
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -189,7 +300,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/iv_statsHome"
         app:layout_constraintStart_toStartOf="@+id/tv_half_"
         app:layout_constraintTop_toTopOf="@+id/tv_half_"
         app:srcCompat="@drawable/ic_sharp_sports_soccer_24" />
@@ -200,7 +311,7 @@
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/iv_statsHome"
         app:layout_constraintTop_toTopOf="@+id/tv_half_"
         app:srcCompat="@drawable/ic_baseline_bar_chart_24" />
 

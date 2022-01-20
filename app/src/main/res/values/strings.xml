@@ -3,22 +3,20 @@
 
 
     <string-array name="MatchLength">
-        <item>Matchlängd</item>
-        <item>2x45</item>
-        <item>2x40</item>
-        <item>2x35</item>
-        <item>2x30</item>
-        <item>3x25</item>
-        <item>3x20</item>
-        <item>2x20</item>
-        <item>2x15</item>
+        <item>2x45 minuter</item>
+        <item>2x40 minuter</item>
+        <item>2x35 minuter</item>
+        <item>2x30 minuter</item>
+        <item>3x25 minuter</item>
+        <item>3x20 minuter</item>
+        <item>2x20 minuter</item>
+        <item>2x15 minuter</item>
     </string-array>
 
 
     <string-array name="HomeAway">
-        <item>Hemma/bortamatch</item>
-        <item>Hemma</item>
-        <item>Borta</item>
+        <item>Hemmamatch</item>
+        <item>Bortamatch</item>
     </string-array>
 
 </resources>

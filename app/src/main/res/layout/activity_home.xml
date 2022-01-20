@@ -42,6 +42,7 @@
         android:layout_marginEnd="60dp"
         android:fontFamily="@font/nunito_sans"
         android:hint="Ange ditt namn"
+        android:minHeight="48dp"
         android:textColor="#000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,6 +55,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans"
         android:hint="Din klubb, t ex Hvetlanda Gif"
+        android:minHeight="48dp"
         android:textColor="#000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/et_fullName"
@@ -67,6 +69,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_sans"
         android:hint="Ditt lag, t ex P05 eller A-lag"
+        android:minHeight="48dp"
         android:textColor="#000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/et_fullName"
@@ -79,6 +82,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans"
         android:hint="Division, ex Nv1 eller Superettan"
+        android:minHeight="48dp"
         android:textColor="#000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/et_fullName"
@@ -92,6 +96,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_sans"
         android:hint="Motståndarnas klubb"
+        android:minHeight="48dp"
         android:textColor="#000"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/tv_profile_teamName4"
@@ -309,7 +314,7 @@
         android:id="@+id/tv_half_"
         android:layout_width="0dp"
         android:layout_height="70dp"
-        android:background="#616161"
+        android:background="@drawable/bottom_menu_gradient"
         android:textAlignment="center"
         android:textColor="#000"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -317,9 +322,9 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/iv_statsHome"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tv_half_"
         app:layout_constraintStart_toStartOf="@+id/tv_half_"
@@ -328,21 +333,21 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/iv_statsHome"
         app:layout_constraintStart_toStartOf="@+id/tv_half_"
         app:layout_constraintTop_toTopOf="@+id/tv_half_"
         app:srcCompat="@drawable/ic_sharp_sports_soccer_24" />
 
     <ImageView
         android:id="@+id/iv_btnStats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/iv_statsHome"
         app:layout_constraintTop_toTopOf="@+id/tv_half_"
         app:srcCompat="@drawable/ic_baseline_bar_chart_24" />
 
@@ -352,6 +357,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
         android:entries="@array/MatchLength"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/et_fullName"
         app:layout_constraintStart_toStartOf="@+id/et_fullName"
         app:layout_constraintTop_toBottomOf="@+id/et_oppostionTeam" />
@@ -362,31 +368,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
         android:entries="@array/HomeAway"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/et_fullName"
         app:layout_constraintStart_toStartOf="@+id/et_fullName"
         app:layout_constraintTop_toBottomOf="@+id/spinner_matchLength" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_profile_teamName2"
-        app:layout_constraintStart_toEndOf="@+id/tv_profile_teamName2"
-        app:layout_constraintTop_toTopOf="@+id/tv_profile_teamName2">
-
-        <RadioButton
-            android:id="@+id/radio_Yes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ja" />
-
-        <RadioButton
-            android:id="@+id/radio_No"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nej" />
-    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
