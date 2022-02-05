@@ -68,7 +68,6 @@ class MainActivity : AppCompatActivity() {
         val todaysDate = SimpleDateFormat("yy/MM/dd")
 
 
-        var eventOpposition = "Motståndare"
 
 
         db = Room.databaseBuilder(
@@ -77,6 +76,7 @@ class MainActivity : AppCompatActivity() {
             "MatchEvents-DB"
         ).build()
 
+        var eventOpposition = "Ingen Motståndare"
 
         GlobalScope.launch {
             val buttons = db.matchEventsDao().getAllButtons()
@@ -88,6 +88,7 @@ class MainActivity : AppCompatActivity() {
 
             val matchSaved = db.matchEventsDao().getAllMatchEvents()
 
+            eventOpposition = settings[0].opposition
 
             // CHECK IF THERE IS ALREADY A MATCH SAVED
             if (matchSaved.isNotEmpty()) {

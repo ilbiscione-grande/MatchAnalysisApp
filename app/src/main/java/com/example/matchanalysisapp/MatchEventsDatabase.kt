@@ -3,13 +3,10 @@ package com.example.matchanalysisapp
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.example.matchanalysisapp.dao.MatchEventsDao
-import com.example.matchanalysisapp.data.ButtonTexts
-import com.example.matchanalysisapp.data.MatchEvents
-import com.example.matchanalysisapp.data.SettingsData
-import com.example.matchanalysisapp.data.Teams
+import com.example.matchanalysisapp.data.*
 
 @Database(
-    entities = [MatchEvents::class, ButtonTexts::class, Teams::class, SettingsData::class],
+    entities = [MatchEvents::class, ButtonTexts::class, Teams::class, SettingsData::class, FirstTimeUser::class],
     version = 1,
     exportSchema = false
 )

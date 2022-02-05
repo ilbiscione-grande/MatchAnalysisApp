@@ -1,10 +1,7 @@
 package com.example.matchanalysisapp.dao
 
 import androidx.room.*
-import com.example.matchanalysisapp.data.ButtonTexts
-import com.example.matchanalysisapp.data.MatchEvents
-import com.example.matchanalysisapp.data.SettingsData
-import com.example.matchanalysisapp.data.Teams
+import com.example.matchanalysisapp.data.*
 
 @Dao
 interface MatchEventsDao {
@@ -32,7 +29,7 @@ interface MatchEventsDao {
     @Query("SELECT * FROM ButtonTexts ORDER BY buttonId")
     fun getAllButtons() : List<ButtonTexts>
 
-    @Query("SELECT * FROM ButtonTexts WHERE buttonText = :searchString")
+    @Query("SELECT * FROM ButtonTexts WHERE buttonName = :searchString")
     fun searchAllButtons(searchString: String) : List<ButtonTexts>
 
     @Query("DELETE FROM ButtonTexts")
@@ -61,7 +58,7 @@ interface MatchEventsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertSetting(vararg settingsData: SettingsData)
 
-    @Query("SELECT * FROM SettingsData ORDER BY settingsId DESC")
+    @Query("SELECT * FROM SettingsData ORDER BY settingsId ASC")
     fun getAllSettings() : List<SettingsData>
 
     @Query("SELECT * FROM SettingsData WHERE fullName = :searchString")
@@ -69,6 +66,17 @@ interface MatchEventsDao {
 
     @Query("DELETE FROM SettingsData")
     fun deleteAllSettings()
+
+
+
+
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertUser(vararg firstTimeUser: FirstTimeUser)
+
+    @Query("SELECT * FROM FirstTimeUser ORDER BY userId DESC")
+    fun getAllUsers() : List<FirstTimeUser>
+
 
 
 }

@@ -57,6 +57,9 @@ class StatsActivity : AppCompatActivity() {
 
                 //tv_stats4_box.text = "${tv_stats4_box.text}\n ${i.eventText}"
 
+
+
+
                 if (i.eventText == allButtons[0].buttonText) {
                     stat_1 = stat_1 + 1
                 }else if (i.eventText == allButtons[1].buttonText) {
@@ -66,6 +69,8 @@ class StatsActivity : AppCompatActivity() {
                 }else if (i.eventText == allButtons[3].buttonText) {
                     stat_4 = stat_4 +1
                 }
+
+
 
                 testNr += 1
 
@@ -80,7 +85,7 @@ class StatsActivity : AppCompatActivity() {
 
             if (allMatchEvents.isNotEmpty()) {
                 tv_statsChosenMatch.text =
-                    "Match ${allMatchEvents[0].matchDate} vs ${allMatchEvents[0].eventTeam}"
+                    "Match ${allMatchEvents[0].matchDate} vs ${allMatchEvents[0].eventOpposition}"
                 textView14.visibility = GONE
 
 
@@ -90,6 +95,7 @@ class StatsActivity : AppCompatActivity() {
 
                 rv_matchStats.layoutManager = LinearLayoutManager(applicationContext)
                 rv_matchStats.setHasFixedSize(true)
+
 
 
                 tv_stats1_text.text = "${allButtons[0].buttonText}"
